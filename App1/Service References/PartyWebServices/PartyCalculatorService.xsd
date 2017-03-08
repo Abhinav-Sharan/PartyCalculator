@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://partycalculator.abhinav/" targetNamespace="http://partycalculator.abhinav/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="addExpenseToWorkflow" type="tns:addExpenseToWorkflow" />
+  <xs:element name="addExpenseToWorkflowResponse" type="tns:addExpenseToWorkflowResponse" />
+  <xs:element name="addUserToWorkflow" type="tns:addUserToWorkflow" />
+  <xs:element name="addUserToWorkflowResponse" type="tns:addUserToWorkflowResponse" />
+  <xs:element name="clear" type="tns:clear" />
+  <xs:element name="clearResponse" type="tns:clearResponse" />
+  <xs:element name="endWorkflow" type="tns:endWorkflow" />
+  <xs:element name="endWorkflowResponse" type="tns:endWorkflowResponse" />
+  <xs:element name="generateWorkflowId" type="tns:generateWorkflowId" />
+  <xs:element name="generateWorkflowIdResponse" type="tns:generateWorkflowIdResponse" />
+  <xs:element name="getAllExpenses" type="tns:getAllExpenses" />
+  <xs:element name="getAllExpensesResponse" type="tns:getAllExpensesResponse" />
+  <xs:element name="getWorkflows" type="tns:getWorkflows" />
+  <xs:element name="getWorkflowsResponse" type="tns:getWorkflowsResponse" />
+  <xs:element name="startWorkflow" type="tns:startWorkflow" />
+  <xs:element name="startWorkflowResponse" type="tns:startWorkflowResponse" />
+  <xs:complexType name="addExpenseToWorkflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="workflowid" type="xs:int" />
+      <xs:element minOccurs="0" name="expense" type="tns:expense" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="expense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="expenseType" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addExpenseToWorkflowResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getWorkflows">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getWorkflowsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:workflow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="workflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="expenses" nillable="true" type="tns:expense" />
+      <xs:element minOccurs="0" name="owner" type="tns:user" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="participants" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="workflowId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllExpenses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="workflowid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllExpensesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:expense" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generateWorkflowId">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="generateWorkflowIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="endWorkflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="workflowid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="endWorkflowResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addUserToWorkflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="tns:user" />
+      <xs:element minOccurs="0" name="workflowid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addUserToWorkflowResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="startWorkflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="workflowid" type="xs:int" />
+      <xs:element minOccurs="0" name="user" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="startWorkflowResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="clear">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="clearResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

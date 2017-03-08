@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://partycalculator.abhinav/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="PartyCalculatorService" targetNamespace="http://partycalculator.abhinav/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="PartyCalculatorServicePortBindingPolicy" />
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://202.166.71.116:2513/PartyCalculator/PartyCalculatorService?xsd=1" namespace="http://partycalculator.abhinav/" />
+    </xsd:schema>
+  </types>
+  <message name="clear">
+    <part name="parameters" element="tns:clear" />
+  </message>
+  <message name="clearResponse">
+    <part name="parameters" element="tns:clearResponse" />
+  </message>
+  <message name="startWorkflow">
+    <part name="parameters" element="tns:startWorkflow" />
+  </message>
+  <message name="startWorkflowResponse">
+    <part name="parameters" element="tns:startWorkflowResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="endWorkflow">
+    <part name="parameters" element="tns:endWorkflow" />
+  </message>
+  <message name="endWorkflowResponse">
+    <part name="parameters" element="tns:endWorkflowResponse" />
+  </message>
+  <message name="getAllExpenses">
+    <part name="parameters" element="tns:getAllExpenses" />
+  </message>
+  <message name="getAllExpensesResponse">
+    <part name="parameters" element="tns:getAllExpensesResponse" />
+  </message>
+  <message name="getWorkflows">
+    <part name="parameters" element="tns:getWorkflows" />
+  </message>
+  <message name="getWorkflowsResponse">
+    <part name="parameters" element="tns:getWorkflowsResponse" />
+  </message>
+  <message name="addUserToWorkflow">
+    <part name="parameters" element="tns:addUserToWorkflow" />
+  </message>
+  <message name="addUserToWorkflowResponse">
+    <part name="parameters" element="tns:addUserToWorkflowResponse" />
+  </message>
+  <message name="generateWorkflowId">
+    <part name="parameters" element="tns:generateWorkflowId" />
+  </message>
+  <message name="generateWorkflowIdResponse">
+    <part name="parameters" element="tns:generateWorkflowIdResponse" />
+  </message>
+  <message name="addExpenseToWorkflow">
+    <part name="parameters" element="tns:addExpenseToWorkflow" />
+  </message>
+  <message name="addExpenseToWorkflowResponse">
+    <part name="parameters" element="tns:addExpenseToWorkflowResponse" />
+  </message>
+  <portType name="PartyCalculatorService">
+    <operation name="clear">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/clearRequest" message="tns:clear" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/clearResponse" message="tns:clearResponse" />
+    </operation>
+    <operation name="startWorkflow">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/startWorkflowRequest" message="tns:startWorkflow" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/startWorkflowResponse" message="tns:startWorkflowResponse" />
+      <fault wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/startWorkflow/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="endWorkflow">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/endWorkflowRequest" message="tns:endWorkflow" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/endWorkflowResponse" message="tns:endWorkflowResponse" />
+    </operation>
+    <operation name="getAllExpenses">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/getAllExpensesRequest" message="tns:getAllExpenses" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/getAllExpensesResponse" message="tns:getAllExpensesResponse" />
+    </operation>
+    <operation name="getWorkflows">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/getWorkflowsRequest" message="tns:getWorkflows" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/getWorkflowsResponse" message="tns:getWorkflowsResponse" />
+    </operation>
+    <operation name="addUserToWorkflow">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/addUserToWorkflowRequest" message="tns:addUserToWorkflow" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/addUserToWorkflowResponse" message="tns:addUserToWorkflowResponse" />
+    </operation>
+    <operation name="generateWorkflowId">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/generateWorkflowIdRequest" message="tns:generateWorkflowId" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/generateWorkflowIdResponse" message="tns:generateWorkflowIdResponse" />
+    </operation>
+    <operation name="addExpenseToWorkflow">
+      <input wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/addExpenseToWorkflowRequest" message="tns:addExpenseToWorkflow" />
+      <output wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/addExpenseToWorkflowResponse" message="tns:addExpenseToWorkflowResponse" />
+      <fault wsam:Action="http://partycalculator.abhinav/PartyCalculatorService/addExpenseToWorkflow/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="PartyCalculatorServicePortBinding" type="tns:PartyCalculatorService">
+    <wsp:PolicyReference URI="#PartyCalculatorServicePortBindingPolicy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="clear">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="startWorkflow">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="endWorkflow">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllExpenses">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getWorkflows">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addUserToWorkflow">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generateWorkflowId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addExpenseToWorkflow">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="PartyCalculatorService">
+    <port name="PartyCalculatorServicePort" binding="tns:PartyCalculatorServicePortBinding">
+      <soap:address location="http://202.166.71.116:2513/PartyCalculator/PartyCalculatorService" />
+    </port>
+  </service>
+</definitions>

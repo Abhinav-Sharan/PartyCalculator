@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="PartyCalculator.ExpenseReport"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PartyCalculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:PartyCalculator"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="The Report for the User" VerticalAlignment="Top"/>
+        <GridView x:Name="gridView" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="340" Height="402" ItemsSource="{x:Bind Expenses}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="data:Expense">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBlock FontSize="10" Text="{x:Bind UserName}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock>  </TextBlock>
+                        <TextBlock FontSize="10" Text="{x:Bind ExpenseType }" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock>  </TextBlock>
+                        <TextBlock FontSize="10" Text="{x:Bind Expensedescription }" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock>  </TextBlock>
+                        <TextBlock FontSize="10" Text="{x:Bind Amount }" HorizontalAlignment="Left"></TextBlock>
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+    </Grid>
+</Page>

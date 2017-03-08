@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="11097AbhinavSharan.PartyCalculator" Publisher="CN=35DED65E-E8D9-47A0-8637-9DAEFDA76CD8" Version="1.1.22.0" />
+  <mp:PhoneIdentity PhoneProductId="b203ad62-8c13-449a-b0bd-b195aca74258" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>PartyCalculator</DisplayName>
+    <PublisherDisplayName>Abhinav Sharan</PublisherDisplayName>
+    <Logo>Assets\PartyCal1.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="App1.App">
+      <uap:VisualElements DisplayName="PartyCalculator" Square150x150Logo="Assets\PartySquare150x150Logo.png" Square44x44Logo="Assets\PartySquare44x44Logo.png" Description="App1" BackgroundColor="transparent">
+        <!--<uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />-->
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\PartySquare71x71Logo.png" Square310x310Logo="Assets\PartySquare310x310Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\PartySplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
