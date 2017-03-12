@@ -14,14 +14,13 @@
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="data:Expense">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock FontSize="10" Text="{x:Bind UserName}" HorizontalAlignment="Left"></TextBlock>
-                        <TextBlock>  </TextBlock>
-                        <TextBlock FontSize="10" Text="{x:Bind ExpenseType }" HorizontalAlignment="Left"></TextBlock>
-                        <TextBlock>  </TextBlock>
-                        <TextBlock FontSize="10" Text="{x:Bind Expensedescription }" HorizontalAlignment="Left"></TextBlock>
-                        <TextBlock>  </TextBlock>
-                        <TextBlock FontSize="10" Text="{x:Bind Amount }" HorizontalAlignment="Left"></TextBlock>
-                        
+                        <TextBlock FontSize="12" Text="{x:Bind UserName}" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="12">Expense Type:</TextBlock>
+                        <TextBlock FontSize="12" Text="{x:Bind ExpenseType }" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="12">Expense Description:</TextBlock>
+                        <TextBlock FontSize="12" Text="{x:Bind Expensedescription }" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock FontSize="12">Amount:</TextBlock>
+                        <TextBlock FontSize="12" Text="{x:Bind Amount }" HorizontalAlignment="Left"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
